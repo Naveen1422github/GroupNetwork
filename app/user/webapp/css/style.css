@@ -1,0 +1,45 @@
+/* Enter your custom styles here */
+.iconAlign{
+    padding-left: 47px;
+}
+.statusAlign{
+    padding-left: 34.5px;
+}
+.shapeAlign{
+    padding-left: 50px;
+    width: 243px;
+}
+.groupkey{
+    padding-left: 29.5px;
+}
+.groupicon{
+    padding-left: 26px;
+
+}
+.groupstatus{
+    padding-left: 14px;
+
+}
+
+.centerContent {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    
+}
+
+.classofform {
+    margin-left: 250px;
+    margin-top: 30px;
+    padding: 30px;
+    border-color: #1212ffdc;
+    border-width: 0.1rem;
+    border-style: solid;
+}
+
+.biggerButton {
+    width: 200px;
+    height: 60px;
+    font-size: 16px; 
+    padding: 10px; 
+}

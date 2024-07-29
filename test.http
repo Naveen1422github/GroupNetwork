@@ -1,0 +1,11 @@
+POST http://localhost:4004/odata/v4/hanaservices/Groups
+Content-Type: application/json
+
+{
+    "groupid" : 1,
+    "groupname" : "CDU BLOCK 1"
+}
+
+
+###
+GET http://localhost:4004/odata/v4/hanaservices/Groups

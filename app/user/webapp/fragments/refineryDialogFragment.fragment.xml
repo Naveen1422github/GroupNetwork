@@ -1,0 +1,251 @@
+<core:FragmentDefinition xmlns:filterbar="sap.ui.comp.filterbar"
+    xmlns:f="sap.f"
+    xmlns="sap.m"
+    xmlns:smartFilterBar="sap.ui.comp.smartfilterbar"
+    xmlns:smartTable="sap.ui.comp.smarttable"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:app="http://schemas.sap.com/sapui5/extension/sap.ui.core.CustomData/1"
+    xmlns:core="sap.ui.core">
+
+    <Dialog title="{title}" contentWidth="auto" contentHeight="auto" closeOnNavigation="true" draggable="true" showHeader="true" stretch="true" busyIndicatorDelay="0" class="sapUiResponsivePadding--header">
+
+
+   
+                
+                <FlexBox class="filterBar">
+                    <DatePicker id="_IDGenDatePicker1" placeholder="Select Month and Year" displayFormat="MM-yyyy" valueFormat="MMyyyy" change="getDateOnChange" width="300px"/>
+                    <ComboBox id="filter_item" items="{
+                        path: '/uniqueaufnr',
+                        sorter: { path: 'Aufnr' }
+                    }" change="onSelectFilter" placeholder="Select Process Order">
+                    <core:Item text="Select an item" key="" enabled="false" />
+                    <!-- Placeholder item -->
+                    <core:Item text="{Aufnr}" key="{Aufnr}" />
+                </ComboBox>
+                    <DatePicker id="_IDGenDatePicker2" placeholder="Select Date for Post Confirmation" value="{
+                                path: '/date'}" valueFormat="yyyy-MM-ddT00:00:00" width="300px" />
+                </FlexBox>
+        
+
+
+                
+          
+    
+        <!-- Tabs Container -->
+        <IconTabBar id="tabBar" applyContentPadding="true" headerMode="Standard" select="onIconTabSelect" selectedKey="FirstTab" expandable="false">
+            <!-- Good Issue Tab -->
+            <items class="sapUiResponsiveMargin">
+                <IconTabFilter id="goodIssueTab" icon="sap-icon://activity-items" text="Goods Issue" key="FirstTab">
+
+                    <VBox id="_IDGenVBox1">
+                        <!-- Add an editable table for Good Issue -->
+                        <Table id="goodIssueTable" mode="MultiSelect" growing="true" rememberSelections="true">
+                            <columns>
+                                <Column>
+                                    <Label text="Material Code" />
+                                </Column>
+                                <Column>
+                                    <Label text="Description" />
+                                </Column>
+                                <Column>
+                                    <Label text="Material Type" />
+                                </Column>
+                                <Column>
+                                    <Label text="Plant"/>
+                                </Column>
+                                <Column>
+                                    <Label text="Storage Loc"/>
+                                </Column>
+                                <Column>
+                                    <Label text="Mov Type"/>
+                                </Column>
+                                <Column >
+                                    <Label text="Valuation Type" />
+                                </Column>
+                                <Column>
+                                    <Label text="Batch" />
+                                </Column>
+                                <Column>
+                                    <Label text="QTY" />
+                                </Column>
+                                <Column>
+                                    <Label text="UOM" />
+                                </Column>
+                                <Column>
+                                    <Label text=""/>
+                                </Column>
+                            </columns>
+                        </Table>
+
+                    </VBox>
+                    <HBox justifyContent="End">
+                        <!-- <Button text="Maintain Default" icon="sap-icon://add-equipment" press="onPressMaintainDefault" id="goodIssueMaintainButton" type="Emphasized"/> -->
+                        <!-- <Button text="Add Row" icon="sap-icon://add" press="onAddRow" type="Emphasized" id="goodIssueTableButton" /> -->
+                        <!-- <Button text="Maintain Default" press="onMaintainDefault" id="goodIssueMaintainDefault" type="Emphasized"/> -->
+                        <Button text="Split Qty" icon="sap-icon://split" press="onPressSplit" id="goodIssueSplitButton" type="Emphasized"/>
+                        <Button text="Post Confirmation" icon="sap-icon://accept" press="onPostConfirmation" id="goodIssueTablePost" type="Accept" />
+                    </HBox>
+
+                </IconTabFilter>
+
+                <!-- Good Receipt Tab -->
+                <IconTabFilter id="goodReceiptTab" icon="sap-icon://approvals" text="Goods Receipt">
+                    <VBox id="_IDGenVBox2">
+                        <!-- Add an editable table for Good Issue -->
+                        <Table id="goodReceiptTable" mode="MultiSelect" growing="true" enableBusyIndicator="true">
+                            <columns>
+                                <Column>
+                                    <Label text="Material Code" />
+                                </Column>
+                                <Column>
+                                    <Label text="Description" />
+                                </Column>
+                                <Column>
+                                    <Label text="Material Type" />
+                                </Column>
+                                <Column>
+                                    <Label text="Plant" />
+                                </Column>
+                                <Column>
+                                    <Label text="Storage Loc" />
+                                </Column>
+                                <Column>
+                                    <Label text="Mov Type"/>
+                                </Column>
+                                <Column>
+                                    <Label text="Valuation Type" />
+                                </Column>
+                                <Column>
+                                    <Label text="Batch" />
+                                </Column>
+                                <Column>
+                                    <Label text="QTY" />
+                                </Column>
+                                <Column>
+                                    <Label text="UOM" />
+                                </Column>
+                                <Column>
+                                    <Label text=""/>
+                                </Column>
+                            </columns>
+                        </Table>
+
+                    </VBox>
+                    <HBox justifyContent="End">
+                        <!-- <Button text="Maintain Default"  press="onMaintainDefault" id="goodReceiptMaintainButton" type="Emphasized"/> -->
+                        <!-- <Button text="Add Row" icon="sap-icon://add" press="onAddRow" id="goodReceiptTableButton" type="Emphasized"/> -->
+                        <Button text="Split Qty" icon="sap-icon://split" press="onPressSplit" id="goodReceiptSplitButton" type="Emphasized"/>
+                        <Button text="Post Confirmation" icon="sap-icon://accept" press="onPostConfirmation" id="goodReceiptTablePost" type="Accept" />
+                    </HBox>
+                </IconTabFilter>
+
+                <!-- Chemical Additives Tab -->
+                <IconTabFilter id="ChemicalTab" icon="sap-icon://lab" text="Chemical Additives">
+                    <VBox id="_IDGenVBox3">
+                        <!-- Add an editable table for Chemical -->
+                        <Table id="chemicalTable" mode="MultiSelect" growing="true" enableBusyIndicator="true">
+                            <columns>
+                                <Column>
+                                    <Label text="Material Code" />
+                                </Column>
+                                <Column>
+                                    <Label text="Description" />
+                                </Column>
+                                <Column>
+                                    <Label text="Material Type" />
+                                </Column>
+                                <Column>
+                                    <Label text="Plant" />
+                                </Column>
+                                <Column>
+                                    <Label text="Storage Loc" />
+                                </Column>
+                                <Column>
+                                    <Label text="Mov Type"/>
+                                </Column>
+                                <Column>
+                                    <Label text="Valuation Type" />
+                                </Column>
+                                <Column>
+                                    <Label text="Batch" />
+                                </Column>
+                                <Column>
+                                    <Label text="QTY" />
+                                </Column>
+                                <Column>
+                                    <Label text="UOM" />
+                                </Column>
+                                 <!-- <Column>
+                                    <Label text="" />
+                                </Column> -->
+                            </columns>
+                        </Table>
+
+                    </VBox>
+                    <HBox justifyContent="End">
+                        <!-- <Button text="Maintain Default" press="onMaintainDefault" id="chemicalMaintainButton" type="Emphasized"/> -->
+                        <!-- <Button text="Add Row" press="onAddRow" id="chemicalTableButton" type="Emphasized" /> -->
+                        <Button text="Split Qty" icon="sap-icon://split" press="onPressSplit" id="chemicalSplitButton" type="Emphasized"/>
+                        <Button text="Post Confirmation" icon="sap-icon://accept" press="onPostConfirmation" id="chemicalTablePost" type="Accept" />
+                    </HBox>
+                </IconTabFilter>
+
+                <!-- Chemical Additives Tab -->
+                <IconTabFilter id="UtilitiesTab" icon="sap-icon://detail-more" text="Utilities">
+                    <VBox id="_IDGenVBox4">
+                        <!-- Add an editable table for  Utilities -->
+                        <Table id="utilitiesTable" mode="MultiSelect" growing="true" enableBusyIndicator="true">
+                            <columns>
+                                <Column>
+                                    <Label text="Material Code" />
+                                </Column>
+                                <Column>
+                                    <Label text="Description" />
+                                </Column>
+                                <Column>
+                                    <Label text="Material Type" />
+                                </Column>
+                                <Column>
+                                    <Label text="Plant" />
+                                </Column>
+                                <Column>
+                                    <Label text="Storage Loc" />
+                                </Column>
+                                <Column>
+                                    <Label text="Mov Type"/>
+                                </Column>
+                                <Column>
+                                    <Label text="Valuation Type" />
+                                </Column>
+                                <Column>
+                                    <Label text="Batch" />
+                                </Column>
+                                <Column>
+                                    <Label text="QTY" />
+                                </Column>
+                                <Column>
+                                    <Label text="UOM" />
+                                </Column>
+                                 <!-- <Column>
+                                    <Label text=""/>
+                                </Column> -->
+                            </columns>
+                        </Table>
+
+                    </VBox>
+                    <HBox justifyContent="End">
+                        <!-- <Button text="Maintain Default" press="onMaintainDefault" id="utilitiesMaintainButton" type="Emphasized"/> -->
+                        <!-- <Button text="Add Row" press="onAddRow" id="utilitiesTableButton" type="Emphasized"/> -->
+                        <Button text="Split Qty" press="onPressSplit" icon="sap-icon://split" id="utilitiesSplitButton" type="Emphasized"/>
+                        <Button text="Post Confirmation" press="onPostConfirmation" icon="sap-icon://accept" id="utilitiesTablePost" type="Accept"/>
+                    </HBox>
+                </IconTabFilter>
+                    <IconTabFilter id="NewTab" icon="sap-icon://activity-items" text="Order Report" key="Report">
+                </IconTabFilter>
+            </items>
+        </IconTabBar>
+        <beginButton>
+            <Button text="Close" type="Emphasized" icon="sap-icon://close-command-field" press="onCloseDialog" />
+        </beginButton>
+    </Dialog>
+</core:FragmentDefinition>

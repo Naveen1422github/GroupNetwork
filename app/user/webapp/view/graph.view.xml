@@ -1,0 +1,236 @@
+<mvc:View controllerName="app.user.controller.graph"
+    xmlns="sap.suite.ui.commons.networkgraph"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:l="sap.ui.layout"
+    xmlns:layout="sap.suite.ui.commons.networkgraph.layout"
+    xmlns:m="sap.m"
+    height="100%"
+>
+<m:Page id="_IDGenPage1" title="Graph View" ></m:Page>
+    <l:FixFlex id="_IDGenFixFlex1" vertical="true">
+        <l:flexContent>
+            <m:FlexBox
+                fitContainer="true"
+                renderType="Bare"
+                wrap="Wrap"
+                id="graphWrapper"
+            >
+                <m:items>
+                    <Graph
+                        enableWheelZoom="false"
+                        orientation="{settings>/orientation}"
+                        nodes="{/nodes}"
+                        lines="{/lines}"
+                        groups="{/groups}"
+                        id="graph"
+                    >
+                        <!-- <dragDropConfig>
+                            <core:DragDropInfo
+                            id = "dragMe"
+                            sourceAggregation="groups"
+                            targetAggregation="groups"
+                            dragStart="onGroupDragStart"
+                            dragEnter="onGroupDragEnter"
+                            drop="onGroupDrop"/>
+                        </dragDropConfig> -->
+                        <statuses>
+                            <Status id="_IDGenStatus1"
+                                key="CustomSuccess"
+                                title="Success"
+                                contentColor="sapUiCalendarColorToday"
+                                headerContentColor="sapUiCalendarColorToday"
+                                borderColor="sapUiCalendarColorToday"
+                                selectedBackgroundColor="sapUiChartPaletteQualitativeHue10"
+                                selectedBorderColor="sapUiChartPaletteQualitativeHue10"
+                                selectedContentColor="red"
+                                hoverBorderColor="sapUiCalendarColorToday"
+                                hoverContentColor="black"
+                                hoverBackgroundColor="sapUiCalendarColorToday"
+                                legendColor="sapUiCalendarColorToday"
+                                useFocusColorAsContentColor="true"
+                            />
+                            <Status id="_IDGenStatus2"
+                                key="LineStatus"
+                                title="Line status"
+                                borderColor="sapUiContentShadowColor"
+                                backgroundColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                                hoverBackgroundColor="sapUiContentShadowColor"
+                                legendColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus3"
+                                key="CustomGreen"
+                                title="Green Node"
+                                backgroundColor="green"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus4"
+                                key="CustomBlue"
+                                title="Blue Node"
+                                backgroundColor="sapUiChartPaletteSequentialHue1Light3"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus5"
+                                key="CustomPink"
+                                title="Pink Node"
+                                backgroundColor="sapUiChartPaletteQualitativeHue8"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus6"
+                                key="CustomRed"
+                                title="Red Node"
+                                backgroundColor="sapUiChartPaletteSemanticBad"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus7"
+                                key="CustomGrey"
+                                title="Grey Node"
+                                backgroundColor="sapUiChartPaletteSemanticNeutralLight3"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus8"
+                                key="CustomLightGrey"
+                                title="Light Grey Node"
+                                backgroundColor="sapUiChartPaletteSequentialNeutralDark1"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus9"
+                                key="CustomYellow"
+                                title="Yellow Node"
+                                backgroundColor="yellow"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus10"
+                                key="CustomLightGreen"
+                                title="Light Green Node"
+                                backgroundColor="sapUiChartPaletteSemanticGoodLight2"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus11"
+                                key="CustomLightBlue"
+                                title="Light Blue Node"
+                                backgroundColor="sapUiChartPaletteSequentialHue1Light2"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus12"
+                                key="CustomeWhite"
+                                title="White Node"
+                                backgroundColor="white"
+                                borderColor="sapUiContentShadowColor"
+                                hoverBorderColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus13"
+                                key="CustomStandardGroup"
+                                title="Standard"
+                                borderColor="sapUiContentShadowColor"
+                                backgroundColor="sapUiNeutralBorder"
+                                hoverBackgroundColor="sapUiNeutralBorder"
+                                hoverContentColor="sapUiFieldWarningColor"
+                                contentColor="sapUiFieldHelpBackground"
+                                useFocusColorAsContentColor="true"
+                                legendColor="sapUiContentShadowColor"
+                            />
+                            <Status id="_IDGenStatus14"
+                                key="AttributeLabel"
+                                contentColor="sapUiCalendarColorToday"
+                                hoverContentColor="red"
+                                selectedContentColor="red"
+                            />
+                            <Status id="_IDGenStatus15"
+                                key="AttributeValue"
+                                contentColor="green"
+                            />
+                            <Status id="_IDGenStatus16"
+                                key="AttributeLabel"
+                                contentColor="green"
+                            />
+                            <Status id="_IDGenStatus17"
+                                key="Dashed"
+                                borderWidth="2px"
+                                borderStyle="dashed"
+                            />
+                            <Status id="_IDGenStatus18"
+                                key="LineBorderStatus"
+                                title="Line border status"
+                                borderColor="red"
+                                backgroundColor="red"
+                                borderWidth="2px"
+                                borderStyle="3,3"
+                            />
+                            <Status id="_IDGenStatus19"
+                                key="GroupCustomStatus"
+                                title="Group custom status"
+                                contentColor="white"
+                                backgroundColor="darkblue"
+                                borderColor="darkblue"
+                            />
+                        </statuses>
+                        <layoutData>
+                            <m:FlexItemData id="_IDGenFlexItemData1"
+                                growFactor="1"
+                                shrinkFactor="1"
+                                baseSize="0%"
+                                minWidth="100px"
+                            />
+                        </layoutData>
+                        <layoutAlgorithm>
+                            <layout:LayeredLayout id="_IDGenLayeredLayout1"
+                                mergeEdges="{settings>/mergeEdges}"
+                                nodePlacement="Simple"
+                                nodeSpacing="40"
+                            />
+                        </layoutAlgorithm>
+                        <nodes>
+                            <Node id="_IDGenNode1"
+                                maxWidth="40"
+                                headerCheckBoxState="{headerCheckBoxState}"
+                                key="{nodeTitle}"
+                                title="{nodeTitle}"
+                                icon="{nodeIcon}"
+                                group="{nodeGroup}"
+                                 shape="{nodeShape}"
+                                status="{nodeStatus}"
+                                press="onOpenDialog"
+                            >                              
+                            </Node>
+                        </nodes>
+                        <lines>
+                            <Line id="_IDGenLine1"
+                                arrowPosition="{settings>/arrowPosition}"
+                                arrowOrientation="{settings>/arrowOrientation}"
+                                from="{lineFrom}"
+                                to="{lineTo}"
+                                status="{status}"
+                            >
+                                <actionButtons>
+                                    <ActionButton id="_IDGenActionButton1" icon="sap-icon://lab" />
+                                    <ActionButton id="_IDGenActionButton2" icon="sap-icon://bubble-chart" />
+                                </actionButtons>
+                            </Line>
+                        </lines>
+                        <!--  -->
+
+                        <groups>
+                            <Group id="_IDGenGroup1"
+                                key="{groupTitle}"
+                                icon="sap-icon://measure"
+                                headerCheckBoxState="{headerCheckboxState}"
+                                title="{groupTitle}"
+                                status="{groupStatus}"
+                            />
+                        </groups>
+                    </Graph>
+                </m:items>
+            </m:FlexBox>
+        </l:flexContent>
+    </l:FixFlex>
+    </mvc:View>

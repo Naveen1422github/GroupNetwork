@@ -1,0 +1,60 @@
+<core:FragmentDefinition 
+xmlns="sap.m"
+    xmlns:core="sap.ui.core">
+    <Dialog title="Maintain Default"  afterClose="onCloseDetailsDialog" >
+        <VBox id="oib_update" visible="true" class="sapUiSmallMarginBeginEnd sapUiSmallMarginTop">
+              <!-- <Title id="_IDGenTitle2" text="Update Default"  level="H2" class="sapUiTinyMargin Dip_form"/> -->
+
+              <HBox id="hbox4">
+                     <VBox id="v7" width="75%">
+                     <Label id="_IDGenLabel4" text="Material Temperature:"/>
+                     <Input id="temp_input" placeholder="" liveChange="onLiveChange" value="" />
+                     </VBox>
+                     <VBox id="v8" class="sapUiSmallMarginBegin">
+                     <Label id="deftemp_label" text="UoM:"/>
+                     <Input id="defuom_input" value="" liveChange="onLiveChangeOnUom" editable="false"></Input>
+                     </VBox>
+              </HBox>
+              <HBox id="hbox5">
+                     <VBox id="v9" width="75%">
+                     <Label id="_IDGenLabel5" text="API:"/>
+                     <Input id="defDensity_input" placeholder="" liveChange="onLiveChange" value="" />
+                     </VBox>
+                     <VBox id="v10" class="sapUiSmallMarginBegin">
+                     <Label id="defdens_label" text="UoM:"/>
+                     <Input id="defdensuom_input" value="" liveChange="onLiveChangeOnUom" editable="false"></Input>
+                     </VBox>
+              </HBox>
+              <HBox id="hbox6">
+                     <VBox id="v11" width="75%">
+                     <Label id="_IDGenLabel6" text="Test Temperature:"/>
+                     <Input id="def_input" placeholder="" liveChange="onLiveChange" value="" />
+                     </VBox>
+                     <VBox id="v12" class="sapUiSmallMarginBegin">
+                     <Label id="defTestTemp_label" text="UoM:"/>
+                     <Input id="defTestTempuom_input" value="" liveChange="onLiveChangeOnUom" editable="false"></Input>
+                     </VBox>
+              </HBox>
+              <HBox id="hbox16" visible="false">
+                    <VBox id="v18" width="75%">
+                    <Label id="sedimentLabel" text="Sediment and Water:"/>
+                    <Input id="sediment_water" placeholder="" liveChange="onLiveChangeWaternSediment"/>
+                    </VBox>
+                    <VBox id="v13" class="sapUiSmallMarginBegin">
+                            <Label id="defTestTemp_label1" text="UoM:"/>
+                            <Input id="defSedimentWaterUom" value="" liveChange="onLiveChangeOnUom" editable="false"></Input>
+                        </VBox> 
+              </HBox>
+
+              <!-- <Button id="_IDGenButton3" type="Accept" text="Confirm" press="onUpdateDefault" class="sapUiTinyMarginTop"/> -->
+
+          </VBox>
+        
+        <beginButton>
+            <Button text="Confirm"  type="Emphasized" press="onUpdateDefault" />
+        </beginButton>
+        <endButton>
+            <Button text="Close" icon="sap-icon://close-command-field" type="Reject" press="onCloseMiantainDialog" />
+        </endButton>
+    </Dialog>
+</core:FragmentDefinition>

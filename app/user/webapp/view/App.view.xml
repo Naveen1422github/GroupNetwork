@@ -1,0 +1,22 @@
+<mvc:View controllerName="app.user.controller.App"
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:f="sap.f"
+    xmlns:tnt="sap.tnt">
+    <tnt:ToolPage id="toolPage">
+        <tnt:header>
+            <tnt:ToolHeader id="_IDGenToolHeader1" >
+                <Button visible="true" icon="sap-icon://nav-back" type="Transparent" id="_IDGenButton2" press="onPressBack" tooltip="Search"/>
+               <ToolbarSpacer id="_IDGenToolbarSpacer1" width="15px" />
+                <Title text="Nodes Graphical representation" wrapping="true" id="productName"/>
+                <ToolbarSpacer id="_IDGenToolbarSpacer2"/>
+                
+            </tnt:ToolHeader>
+        </tnt:header>
+    <tnt:mainContents>
+    <App id="app">
+    </App>
+    </tnt:mainContents>
+    </tnt:ToolPage>
+</mvc:View>

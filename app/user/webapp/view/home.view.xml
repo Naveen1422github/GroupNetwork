@@ -1,0 +1,35 @@
+<mvc:View 
+    xmlns:form="sap.ui.layout.form"
+    busyIndicatorDelay="0"
+    height="100%"
+    displayBlock="true"
+    xmlns="sap.m"
+    xmlns:mvc="sap.ui.core.mvc"
+    xmlns:core="sap.ui.core"
+    controllerName="app.user.controller.home"
+>
+    <Page showHeader="false" id="page">
+       
+        <content>
+            <GenericTile
+                id="_IDGenGenericTile1"
+                press="onPressConfigration"
+                header="Configration"
+                subheader="Configration Inputs"
+                class="sapUiSmallMarginBegin sapUiLargeMarginTop tileLayout"
+            >
+               
+            </GenericTile>
+
+            <GenericTile
+                id="_IDGenGenericTile2"
+                press="onPressGraph"
+                header="Graph View"
+                subheader="Graph representation"
+                class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout"
+            >
+                
+            </GenericTile>
+</content>
+</Page>
+</mvc:View>
